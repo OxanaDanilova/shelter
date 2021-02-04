@@ -1,4 +1,4 @@
-import './app.module';
+import "./styles.scss";
 
 const obj = {
     hello: 'Hello, Oxik!'
