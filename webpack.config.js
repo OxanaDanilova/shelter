@@ -20,8 +20,11 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
+        use: [{
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            publicPath: './',
+          }},          
           'css-loader'
         ],
         exclude: /\.module\.css$/
@@ -29,7 +32,11 @@ const config = {
       {
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: './',
+            }},
           'css-loader',
           'sass-loader'
         ]
@@ -43,6 +50,7 @@ const config = {
             options: {
               importLoaders: 1,
               modules: true
+              
             }
           }
         ],
@@ -59,7 +67,8 @@ const config = {
             loader: 'url-loader',
             options: {
               /* mimetype: 'image/png' */
-              limit: 8192
+              limit: 8192,
+              name: 'images/[name].[ext]'
             }
           }
         ]
@@ -67,14 +76,16 @@ const config = {
     ]
   },
   plugins: [
-    /* new CopyPlugin({
-      patterns: [{ from: 'src/index.html' }],
-    }), */
+     new CopyPlugin({
+      patterns: [ {from: 'src/images', to: './images'} ],
+     }), 
     new HtmlWebpackPlugin({
         template: './src/index.html',
         filename: './index.html'      
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin(/* {
+      filename: './[name.css'   
+    } */),
     new CleanWebpackPlugin()
   ]
 };
