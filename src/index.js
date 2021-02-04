@@ -1,3 +1,5 @@
+import './app.module';
+
 const obj = {
     hello: 'Hello, Oxik!'
   };
@@ -5,3 +7,5 @@ const obj = {
   const { hello } = obj;
   
   console.log(hello);
+
+  
