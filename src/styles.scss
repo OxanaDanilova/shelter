@@ -149,7 +149,7 @@ header {
 .about-img {
   background-image: url(./images/about-pets.png);
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
   background-position: center;
   height: 408px;
   grid-area: 1/2;
@@ -198,9 +198,126 @@ header {
 }
 
 .pets {
-  background-color: coral;
+  background-color: #F6F6F6;
   grid-area: 3/1;
+  display: grid;
+  grid-template-columns: 1fr $content-width 1fr;
 }
+
+.pets-wrapper {
+  margin: 80px 40px 100px 40px;
+  grid-area: 1/2;
+  display: grid;
+  grid-template-rows: 90px 435px 52px;
+  grid-row-gap: 60px;
+}
+
+.pets-titel {
+  width: 400px;
+  height: 90px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px;
+  line-height: 130%;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #545454;
+  justify-self: center;
+}
+
+.pets-slider {
+  display: grid;
+  grid-template-columns: 52px 270px 270px 270px 52px;
+  justify-content: space-between;
+  align-items: center;
+  .arrow {
+    width: 52px;
+    height: 52px;
+    border: 2px solid #f1cdb3;
+    box-sizing: border-box;
+    border-radius: 100px;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    cursor: pointer;
+  }
+  .card {
+    width: 270px;
+    height: 435px;
+    background: #fafafa;
+    border-radius: 9px;
+    display: grid;
+    .pets-image {
+      height: 270px;
+      width: 270px;
+      border-radius: 9px 9px 0px 0px;
+    }
+    .pets-name {
+      width: 74px;
+      height: 23px;
+      font-family: "Georgia";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 23px;
+      letter-spacing: 0.06em;
+      color: #545454;
+      justify-self: center;
+    }
+    .learn-btn {
+      width: 187px;
+      height: 52px;
+      justify-self: center;
+      box-sizing: border-box;
+      border-radius: 100px;
+      border: 2px solid #f1cdb3;
+      background: #fafafa;
+      cursor: pointer;
+    }
+  }
+}
+
+.first {
+  .pets-image {
+    background-image: url(./images/pets-katrine.png);
+  }
+}
+
+.second {
+  .pets-image {
+    background-image: url(./images/pets-jennifer.png);
+  }
+}
+
+.third {
+  .pets-image {
+    background-image: url(./images/pets-woody.png);
+  }
+}
+
+.pets-btn {
+  width: 261px;
+  height: 52px;
+  background: #f1cdb3;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
+  justify-self: center;
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+button {
+  outline: none;
+}
+
 .help {
   background-color: gray;
   grid-area: 4/1;
