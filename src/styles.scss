@@ -10,7 +10,7 @@ body {
   background-color: $bgcolor;
   justify-content: center;
   display: grid;
-  grid-template-columns: 1fr $content-width 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 908px 588px 877px 611px 464px 350px;
 }
 
@@ -19,7 +19,7 @@ main {
   background-size: cover;
   display: grid;
   grid-template-columns: 1fr $content-width 1fr;
-  grid-area: 1/1 / span 1 / span 3;
+  grid-area: 1/1;
 }
 
 .main-content {
@@ -29,6 +29,7 @@ main {
 
 header {
   display: grid;
+  width: 100%;
   grid-template-columns: 184px 443px;
   justify-content: space-between;
   align-items: center;
@@ -131,17 +132,84 @@ header {
 }
 
 .about {
-  background-color: cadetblue;
+  background-color: #ffffff;
+  grid-area: 2/1;
+  display: grid;
+  grid-template-columns: 1fr $content-width 1fr;
 }
+
+.about-wrapper {
+  grid-area: 1/2/1/2;
+  margin: 80px 40px 100px 40px;
+  display: grid;
+  grid-template-columns: 1fr 300px 120px 430px 1fr;
+  align-items: center;
+}
+
+.about-img {
+  background-image: url(./images/about-pets.png);
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center;
+  height: 408px;
+  grid-area: 1/2;
+}
+
+.about-content {
+  grid-area: 1/4;
+  height: 380px;
+}
+
+.about-titel {
+  margin-top: 14px;
+  width: 370px;
+  height: 90px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.about-first-text {
+  width: 430px;
+  height: 96px;
+  margin-top: 25px;
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 160%;
+  color: #4c4c4c;
+}
+
+.about-second-text {
+  width: 430px;
+  height: 144px;
+  margin-top: 25px;
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 160%;
+  color: #4c4c4c;
+}
+
 .pets {
   background-color: coral;
+  grid-area: 3/1;
 }
 .help {
   background-color: gray;
+  grid-area: 4/1;
 }
 .donation {
   background-color: hotpink;
+  grid-area: 5/1;
 }
 footer {
   background-color: khaki;
+  grid-area: 6/1;
 }
