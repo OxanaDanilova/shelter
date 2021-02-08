@@ -198,7 +198,7 @@ header {
 }
 
 .pets {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   grid-area: 3/1;
   display: grid;
   grid-template-columns: 1fr $content-width 1fr;
@@ -319,9 +319,73 @@ button {
 }
 
 .help {
-  background-color: gray;
   grid-area: 4/1;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr $content-width 1fr;
 }
+
+.help-wrapper {
+  grid-area: 1/2;
+  margin: 80px 40px 100px 40px;
+  display: grid;
+  grid-template-rows: 90px 1fr;
+}
+
+.help-titel {
+  width: 308px;
+  height: 90px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+
+.help-list {
+  margin-top: 60px;
+  width: 1026px;
+  height: 281px;
+  display: grid;
+  grid-row-gap: 55px;
+  list-style: none;
+  justify-self: center;
+  grid-template-columns: repeat(20, 1fr);
+  li {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+  li:nth-child(1),
+  li:nth-child(2),
+  li:nth-child(3),
+  li:nth-child(4),
+  li:nth-child(5) {
+    grid-column: 4 span;
+  }
+  li:nth-child(6),
+  li:nth-child(7),
+  li:nth-child(8),
+  li:nth-child(9) {
+    grid-column: 5 span;
+  }
+  p {
+    height: 23px;
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #545454;
+  }
+}
+
 .donation {
   background-color: hotpink;
   grid-area: 5/1;
