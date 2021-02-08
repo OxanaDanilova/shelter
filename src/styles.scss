@@ -387,10 +387,100 @@ button {
 }
 
 .donation {
-  background-color: hotpink;
+  background-color: #f6f6f6;
   grid-area: 5/1;
+  display: grid;
+  grid-template-columns: 1fr $content-width 1fr;
 }
+
+.donation-wrapper {
+  grid-area: 1/2;
+  margin: 80px 40px 100px 40px;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  grid-column-gap: 30px;
+}
+
+.donation-img {
+  background-image: url(./images/donation-dog.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  grid-area: 1/1;
+  width: 505px;
+  height: 261px;
+}
+
+.donation-content {
+  grid-area: 1/2;
+  width: 380px;
+  height: 282px;
+  display: grid;
+  align-items: center;
+}
+
+.donation-titel {
+  width: 300px;
+  height: 90px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.donation-subtitel {
+  height: 17px;
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.credit-card {
+  width: 349px;
+  height: 43px;
+  background: #f1cdb3;
+  border-radius: 9px;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: space-around;
+  p {
+    height: 23px;
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 115%;
+    align-items: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+  }
+}
+
+.donation-text {
+  width: 380px;
+  height: 72px;
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  align-items: center;
+  color: #b2b2b2;
+}
+
 footer {
-  background-color: khaki;
+  background-image: url(./images/footer-gradient-background.png);
   grid-area: 6/1;
+  display: grid;
+  grid-template-columns: 1fr $content-width 1fr;
 }
