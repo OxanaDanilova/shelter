@@ -29,20 +29,19 @@ main {
 
 header {
   display: grid;
-  width: 100%;
-  grid-template-columns: 184px 443px;
+  grid-template-columns: /* 184px 443px */ 17% auto 37%;
   justify-content: space-between;
   align-items: center;
   .logo-wrapper {
+    grid-area: 1/1;
     .logo {
       height: 35px;
       font-family: "Georgia";
       font-style: normal;
       font-weight: normal;
       font-size: 32px;
-      line-height: 110%;
       align-items: center;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
       color: #f1cdb3;
     }
     .logo-text {
@@ -54,12 +53,15 @@ header {
       font-size: 13px;
       line-height: 15px;
       align-items: center;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.11em;
       color: #ffffff;
     }
   }
 }
 
+nav {
+  grid-area: 1/3;
+}
 .nav-menu {
   display: grid;
   grid-template-columns: 114px 58px 106px 60px;
@@ -77,11 +79,16 @@ header {
   }
 }
 
+.activ {
+  border-bottom: 3px solid #f1cdb3;
+  padding-bottom: 5px;
+}
+
 .start-screen-content {
   margin-top: 60px;
-  height: 788px;
+  height: 728px;
   display: grid;
-  grid-template: 1fr 321px 1fr / 460px auto 698px;
+  grid-template: 23% 321px 1fr / 460px auto 698px;
   justify-content: space-between;
 }
 
@@ -91,12 +98,12 @@ header {
 
 .main-titel {
   width: 310px;
-  height: 114px;
+  height: 111px;
   font-family: Georgia;
   font-style: normal;
   font-weight: normal;
   font-size: 44px;
-  line-height: 130%;
+  line-height: 124%;
   align-items: center;
   color: #ffffff;
 }
@@ -117,12 +124,18 @@ header {
 .make-friend-btn {
   margin-top: 41px;
   padding: 15px 45px;
-  width: 207px;
   height: 52px;
   background: #f1cdb3;
   border-radius: 100px;
   border: none;
   cursor: pointer;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
 }
 
 .puppy-img {
@@ -493,10 +506,11 @@ footer {
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: space-between;
-  align-items: center;  
+  align-items: center;
 }
 
-.footer-contacts, .footer-location {
+.footer-contacts,
+.footer-location {
   height: 234px;
   align-content: space-between;
   display: grid;
@@ -507,7 +521,6 @@ footer {
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
-  
 }
 
 .footer-title {
@@ -528,7 +541,7 @@ footer {
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
-  line-height: 115%;  
+  line-height: 115%;
   color: #f1cdb3;
 }
 
