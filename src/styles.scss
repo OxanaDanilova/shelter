@@ -29,11 +29,12 @@ main {
 
 header {
   display: grid;
-  grid-template-columns: /* 184px 443px */ 17% auto 37%;
+  grid-template-columns: /* 184px 443px */ 16% auto 37%;
   justify-content: space-between;
   align-items: center;
   .logo-wrapper {
     grid-area: 1/1;
+    display: grid;
     .logo {
       height: 35px;
       font-family: "Georgia";
@@ -51,10 +52,9 @@ header {
       font-style: normal;
       font-weight: normal;
       font-size: 13px;
-      line-height: 15px;
-      align-items: center;
       letter-spacing: 0.11em;
       color: #ffffff;
+      justify-self: center;
     }
   }
 }
@@ -68,14 +68,17 @@ nav {
   grid-template-rows: 1fr;
   justify-content: space-between;
   list-style: none;
-  a {
-    text-decoration: none;
-    font-family: Arial;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 160%;
-    color: #fafafa;
+  li {
+    display: grid;
+    a {
+      text-decoration: none;
+      font-family: Arial;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      color: #fafafa;
+      justify-self: center;
+    }
   }
 }
 
@@ -174,7 +177,6 @@ nav {
 }
 
 .about-titel {
-  margin-top: 14px;
   width: 370px;
   height: 90px;
   font-family: "Georgia";
@@ -217,6 +219,20 @@ nav {
   grid-template-columns: 1fr $content-width 1fr;
 }
 
+.arrow {
+  width: 52px;
+  height: 52px;
+  border: 2px solid #f1cdb3;
+  box-sizing: border-box;
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  align-self: center;
+  justify-self: center;
+  cursor: pointer;
+}
+
 .pets-wrapper {
   margin: 80px 40px 100px 40px;
   grid-area: 1/2;
@@ -242,20 +258,10 @@ nav {
 
 .pets-slider {
   display: grid;
-  grid-template-columns: 52px 270px 270px 270px 52px;
-  justify-content: space-between;
+  grid-template-columns: repeat(3, 270px);
+  justify-content: center;
   align-items: center;
-  .arrow {
-    width: 52px;
-    height: 52px;
-    border: 2px solid #f1cdb3;
-    box-sizing: border-box;
-    border-radius: 100px;
-    justify-content: center;
-    align-items: center;
-    display: grid;
-    cursor: pointer;
-  }
+  grid-column-gap: 90px;
   .card {
     width: 270px;
     height: 435px;
@@ -268,7 +274,6 @@ nav {
       border-radius: 9px 9px 0px 0px;
     }
     .pets-name {
-      width: 74px;
       height: 23px;
       font-family: "Georgia";
       font-style: normal;
@@ -287,6 +292,13 @@ nav {
       border-radius: 100px;
       border: 2px solid #f1cdb3;
       background: #fafafa;
+      font-family: "Georgia";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 17px;
+      line-height: 130%;
+      letter-spacing: 0.06em;
+      color: #292929;
       cursor: pointer;
     }
   }
@@ -346,7 +358,7 @@ button {
 }
 
 .help-titel {
-  width: 308px;
+  width: 311px;
   height: 90px;
   font-family: "Georgia";
   font-style: normal;
@@ -372,7 +384,7 @@ button {
   li {
     display: grid;
     justify-items: center;
-    align-items: center;
+    align-content: space-between;
   }
   li:nth-child(1),
   li:nth-child(2),
@@ -444,6 +456,7 @@ button {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #545454;
+  align-self: normal;
 }
 
 .donation-subtitel {
@@ -506,14 +519,17 @@ footer {
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: space-between;
-  align-items: center;
+  
 }
 
 .footer-contacts,
 .footer-location {
   height: 234px;
-  align-content: space-between;
+  margin-top: 15px;
   display: grid;
+  align-content: space-between;
+  justify-content: space-between;
+  
 }
 
 .footer-contacts div,
@@ -531,6 +547,7 @@ footer {
   font-weight: normal;
   font-size: 35px;
   line-height: 130%;
+  letter-spacing: 0.05em;
   color: #ffffff;
 }
 
