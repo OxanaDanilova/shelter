@@ -1,5 +1,17 @@
-$bgcolor: rgb(148, 221, 255);
 $content-width: 1280px;
+
+%font-georgia {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.06em;
+}
+
+%font-arial {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: normal;
+}
 
 * {
   margin: 0;
@@ -7,19 +19,18 @@ $content-width: 1280px;
 }
 
 body {
-  background-color: $bgcolor;
-  justify-content: center;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 908px 588px 877px 611px 464px 350px;
+  justify-content: center;
 }
 
 main {
+  grid-area: 1/1;
   background-image: url(./images/start-screen-background.png);
   background-size: cover;
   display: grid;
-  grid-template-columns: 1fr $content-width 1fr;
-  grid-area: 1/1;
+  grid-template-columns: 1fr $content-width 1fr;  
 }
 
 .main-content {
@@ -29,7 +40,7 @@ main {
 
 header {
   display: grid;
-  grid-template-columns: /* 184px 443px */ 16% auto 37%;
+  grid-template-columns: 16% auto 37%;
   justify-content: space-between;
   align-items: center;
   .logo-wrapper {
@@ -37,20 +48,15 @@ header {
     display: grid;
     .logo {
       height: 35px;
-      font-family: "Georgia";
-      font-style: normal;
-      font-weight: normal;
+      @extend %font-georgia;
       font-size: 32px;
-      align-items: center;
-      letter-spacing: 0.06em;
       color: #f1cdb3;
+      align-items: center;
     }
     .logo-text {
+      @extend %font-georgia;
       height: 15px;
       margin-top: 10px;
-      font-family: "Arial";
-      font-style: normal;
-      font-weight: normal;
       font-size: 13px;
       letter-spacing: 0.11em;
       color: #ffffff;
@@ -72,9 +78,7 @@ nav {
     display: grid;
     a {
       text-decoration: none;
-      font-family: Arial;
-      font-style: normal;
-      font-weight: normal;
+      @extend %font-arial;
       font-size: 15px;
       color: #fafafa;
       justify-self: center;
@@ -91,7 +95,7 @@ nav {
   margin-top: 60px;
   height: 728px;
   display: grid;
-  grid-template: 23% 321px 1fr / 460px auto 698px;
+  grid-template: 23% (321px*100%/1200px) 1fr / 460px auto 698px;
   justify-content: space-between;
 }
 
@@ -99,12 +103,11 @@ nav {
   grid-area: 2/ 1 / span 1 / span 1;
 }
 
-.main-titel {
+.main-title {
   width: 310px;
   height: 111px;
-  font-family: Georgia;
-  font-style: normal;
-  font-weight: normal;
+  @extend %font-georgia;
+  letter-spacing: normal;
   font-size: 44px;
   line-height: 124%;
   align-items: center;
@@ -115,9 +118,7 @@ nav {
   width: 460px;
   height: 72px;
   margin-top: 42px;
-  font-family: Arial;
-  font-style: normal;
-  font-weight: normal;
+  @extend %font-arial;
   font-size: 15px;
   line-height: 160%;
   align-items: center;
@@ -132,12 +133,9 @@ nav {
   border-radius: 100px;
   border: none;
   cursor: pointer;
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: normal;
+  @extend %font-georgia;
   font-size: 17px;
   line-height: 130%;
-  letter-spacing: 0.06em;
   color: #292929;
 }
 
@@ -158,7 +156,7 @@ nav {
   grid-area: 1/2/1/2;
   margin: 80px 40px 100px 40px;
   display: grid;
-  grid-template-columns: 1fr 300px 120px 430px 1fr;
+  grid-template-columns: 1fr 300px*100%/1200px 120px*100%/1200px 430px*100%/1200px 1fr;
   align-items: center;
 }
 
@@ -176,15 +174,12 @@ nav {
   height: 380px;
 }
 
-.about-titel {
+.about-title {
   width: 370px;
   height: 90px;
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: normal;
+  @extend %font-georgia;
   font-size: 35px;
   line-height: 130%;
-  letter-spacing: 0.06em;
   color: #545454;
 }
 
@@ -192,9 +187,7 @@ nav {
   width: 430px;
   height: 96px;
   margin-top: 25px;
-  font-family: "Arial";
-  font-style: normal;
-  font-weight: normal;
+  @extend %font-arial;
   font-size: 15px;
   line-height: 160%;
   color: #4c4c4c;
@@ -204,9 +197,7 @@ nav {
   width: 430px;
   height: 144px;
   margin-top: 25px;
-  font-family: "Arial";
-  font-style: normal;
-  font-weight: normal;
+  @extend %font-arial;
   font-size: 15px;
   line-height: 160%;
   color: #4c4c4c;
@@ -241,17 +232,14 @@ nav {
   grid-row-gap: 60px;
 }
 
-.pets-titel {
+.pets-title {
   width: 400px;
   height: 90px;
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: normal;
+  @extend %font-georgia;
   font-size: 35px;
   line-height: 130%;
   align-items: center;
   text-align: center;
-  letter-spacing: 0.06em;
   color: #545454;
   justify-self: center;
 }
@@ -275,12 +263,9 @@ nav {
     }
     .pets-name {
       height: 23px;
-      font-family: "Georgia";
-      font-style: normal;
-      font-weight: normal;
+      @extend %font-georgia;
       font-size: 20px;
       line-height: 23px;
-      letter-spacing: 0.06em;
       color: #545454;
       justify-self: center;
     }
@@ -292,12 +277,9 @@ nav {
       border-radius: 100px;
       border: 2px solid #f1cdb3;
       background: #fafafa;
-      font-family: "Georgia";
-      font-style: normal;
-      font-weight: normal;
+      @extend %font-georgia;
       font-size: 17px;
       line-height: 130%;
-      letter-spacing: 0.06em;
       color: #292929;
       cursor: pointer;
     }
@@ -326,12 +308,9 @@ nav {
   width: 261px;
   height: 52px;
   background: #f1cdb3;
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: normal;
+  @extend %font-georgia;
   font-size: 17px;
   line-height: 130%;
-  letter-spacing: 0.06em;
   color: #292929;
   justify-self: center;
   border: 2px solid #f1cdb3;
@@ -357,15 +336,12 @@ button {
   grid-template-rows: 90px 1fr;
 }
 
-.help-titel {
+.help-title {
   width: 311px;
   height: 90px;
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: normal;
   font-size: 35px;
   line-height: 130%;
-  letter-spacing: 0.06em;
+  @extend %font-georgia;
   color: #545454;
   align-self: center;
   justify-self: center;
@@ -401,12 +377,9 @@ button {
   }
   p {
     height: 23px;
-    font-family: "Georgia";
-    font-style: normal;
-    font-weight: normal;
+    @extend %font-georgia;
     font-size: 20px;
     line-height: 115%;
-    letter-spacing: 0.06em;
     color: #545454;
   }
 }
@@ -446,27 +419,21 @@ button {
   align-items: center;
 }
 
-.donation-titel {
+.donation-title {
   width: 300px;
   height: 90px;
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: normal;
+  @extend %font-georgia;
   font-size: 35px;
   line-height: 130%;
-  letter-spacing: 0.06em;
   color: #545454;
   align-self: normal;
 }
 
-.donation-subtitel {
+.donation-subtitle {
   height: 17px;
-  font-family: Georgia;
-  font-style: normal;
-  font-weight: normal;
+  @extend %font-georgia;
   font-size: 15px;
   line-height: 110%;
-  letter-spacing: 0.06em;
   color: #545454;
 }
 
@@ -481,13 +448,10 @@ button {
   justify-content: space-around;
   p {
     height: 23px;
-    font-family: "Georgia";
-    font-style: normal;
-    font-weight: normal;
+    @extend %font-georgia;
     font-size: 20px;
     line-height: 115%;
     align-items: center;
-    letter-spacing: 0.06em;
     color: #545454;
   }
 }
@@ -495,9 +459,8 @@ button {
 .donation-text {
   width: 380px;
   height: 72px;
-  font-family: "Arial";
+  @extend %font-arial;
   font-style: italic;
-  font-weight: normal;
   font-size: 12px;
   line-height: 18px;
   align-items: center;
@@ -519,7 +482,6 @@ footer {
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: space-between;
-  
 }
 
 .footer-contacts,
@@ -529,7 +491,6 @@ footer {
   display: grid;
   align-content: space-between;
   justify-content: space-between;
-  
 }
 
 .footer-contacts div,
@@ -542,9 +503,7 @@ footer {
 .footer-title {
   width: 278px;
   height: 90px;
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: normal;
+  @extend %font-georgia;
   font-size: 35px;
   line-height: 130%;
   letter-spacing: 0.05em;
@@ -554,9 +513,7 @@ footer {
 .footer-text {
   width: 223px;
   height: 23px;
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: normal;
+  @extend %font-georgia;
   font-size: 20px;
   line-height: 115%;
   color: #f1cdb3;
