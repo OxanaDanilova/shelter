@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const config = {
-  entry: './src/index.js',
+  entry: './src/pages/main/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js'
@@ -68,7 +68,7 @@ const config = {
             options: {
               /* mimetype: 'image/png' */
               limit: 8192,
-              name: 'images/[name].[ext]'
+              name: 'assets/images/[name].[ext]'
             }
           }
         ]
@@ -77,10 +77,10 @@ const config = {
   },
   plugins: [
      new CopyPlugin({
-      patterns: [ {from: 'src/images', to: './images'} ],
+      patterns: [ {from: 'src/assets/images', to: '.assets/images'} ],
      }), 
     new HtmlWebpackPlugin({
-        template: './src/index.html',
+        template: './src/pages/main/index.html',
         filename: './index.html'      
     }),
     new MiniCssExtractPlugin(/* {
