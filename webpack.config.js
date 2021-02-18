@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const config = {
-  entry: './src/pages/main/index.js',
+  entry: /* './src/pages/main/index.js' */ './src/pages/pets/pets.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js'
@@ -80,7 +80,7 @@ const config = {
       patterns: [ {from: 'src/assets/images', to: '.assets/images'} ],
      }), 
     new HtmlWebpackPlugin({
-        template: './src/pages/main/index.html',
+        template: /* './src/pages/main/index.html' */ './src/pages/pets/index.html',
         filename: './index.html'      
     }),
     new MiniCssExtractPlugin(/* {
