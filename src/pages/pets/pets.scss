@@ -27,9 +27,13 @@ body {
 }
 
 main {
+  position: fixed;
+  left: 0;
+  right: 0;
   grid-area: 1/1;
   display: grid;
   grid-template-columns: 1fr $content-width 1fr;
+  background: #FFFFFF;
 }
 
 .main-content {
@@ -100,6 +104,7 @@ nav {
   grid-area: 2/1;
   display: grid;
   grid-template-columns: 1fr $content-width 1fr;
+  margin-top: 120px;
 }
 
 .arrow {
@@ -137,7 +142,7 @@ nav {
   grid-area: 1/2;
   display: grid;
   grid-template-rows: 90px 930px 52px;
-  grid-row-gap: 60px;
+  grid-row-gap: 45px;
 }
 
 .pets-title {
@@ -157,8 +162,7 @@ nav {
   grid-template-columns: repeat(4, 270px);
   justify-content: center;
   align-items: center;
-  grid-column-gap: 40px;
-  grid-row-gap: 30px;
+  grid-column-gap: 40px;  
   .card {
     width: 270px;
     height: 435px;
@@ -276,7 +280,7 @@ nav {
   grid-template: 1fr / repeat(5, 52px);
   justify-content: space-between;
   width: 340px;
-  justify-self: center;
+  justify-self: center;  
 }
 
 button {
@@ -296,7 +300,7 @@ footer {
   grid-area: 1/2;
   margin: 40px 40px 0 40px;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 281px*100%/1200px 302px*100%/1200px auto;
   justify-content: space-between;
 }
 
@@ -315,6 +319,7 @@ footer {
   grid-template-columns: auto auto;
   align-items: center;
   text-decoration: none;
+  grid-column-gap: 20px;
 }
 
 .footer-title {
@@ -328,8 +333,7 @@ footer {
 }
 
 .footer-text {
-  width: 223px;
-  height: 23px;
+  width: 302px;
   @extend %font-georgia;
   font-size: 20px;
   line-height: 115%;
